@@ -68,7 +68,7 @@
                                 <rect key="frame" x="20" y="40" width="335" height="627"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-wp-K3R">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="182"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyA-S3-5rK">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="41"/>
@@ -92,6 +92,14 @@
                                                 <state key="normal" title="Present FullScreenMenu"/>
                                                 <connections>
                                                     <action selector="didTapShowFullScreen:" destination="xZf-P8-GFZ" eventType="touchUpInside" id="IAX-eG-vZE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1f-Lk-Lgc">
+                                                <rect key="frame" x="0.0" y="141" width="335" height="41"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <state key="normal" title="Present List Rideau"/>
+                                                <connections>
+                                                    <action selector="didTapShowRideauList:" destination="xZf-P8-GFZ" eventType="touchUpInside" id="U2Y-xL-yEw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -266,6 +274,82 @@
             </objects>
             <point key="canvasLocation" x="2140" y="26.53673163418291"/>
         </scene>
+        <!--Select Rideau View Controller-->
+        <scene sceneID="s41-B1-leg">
+            <objects>
+                <viewController storyboardIdentifier="SelectRideauViewController" id="fOx-b0-R6t" customClass="SelectRideauViewController" customModule="RideauDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uY5-Mg-CrE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a Rideau" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h89-Pu-RdM">
+                                <rect key="frame" x="20" y="40" width="335" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QWJ-7W-4lQ">
+                                <rect key="frame" x="0.0" y="103" width="375" height="564"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="Lsi-Bz-Thv">
+                                    <size key="itemSize" width="231" height="221"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="RideauCell" reuseIdentifier="RideauCell" id="nUb-04-vjb" customClass="RideauCell" customModule="RideauDemo" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="0.0" width="231" height="221"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="231" height="221"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rideau1" translatesAutoresizingMaskIntoConstraints="NO" id="fyt-fr-LKG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="231" height="221"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="fyt-fr-LKG" firstAttribute="leading" secondItem="nUb-04-vjb" secondAttribute="leading" id="0tF-h9-KC5"/>
+                                            <constraint firstAttribute="bottom" secondItem="fyt-fr-LKG" secondAttribute="bottom" id="Oyh-Ud-XRL"/>
+                                            <constraint firstAttribute="trailing" secondItem="fyt-fr-LKG" secondAttribute="trailing" id="QuX-D5-kMI"/>
+                                            <constraint firstItem="fyt-fr-LKG" firstAttribute="top" secondItem="nUb-04-vjb" secondAttribute="top" id="f8u-4b-3RC"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="fyt-fr-LKG" id="1Ol-g7-dK0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="fOx-b0-R6t" id="xRB-9o-Ilq"/>
+                                    <outlet property="delegate" destination="fOx-b0-R6t" id="tWI-uT-98E"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h89-Pu-RdM" firstAttribute="leading" secondItem="ulY-9n-GdG" secondAttribute="leading" constant="20" id="3hY-XV-5jY"/>
+                            <constraint firstItem="ulY-9n-GdG" firstAttribute="trailing" secondItem="h89-Pu-RdM" secondAttribute="trailing" constant="20" id="L2t-kt-2Go"/>
+                            <constraint firstItem="QWJ-7W-4lQ" firstAttribute="leading" secondItem="ulY-9n-GdG" secondAttribute="leading" id="bYU-tw-Mi3"/>
+                            <constraint firstItem="QWJ-7W-4lQ" firstAttribute="trailing" secondItem="ulY-9n-GdG" secondAttribute="trailing" id="g3q-nX-9Us"/>
+                            <constraint firstItem="QWJ-7W-4lQ" firstAttribute="top" secondItem="h89-Pu-RdM" secondAttribute="bottom" constant="20" id="j91-Uv-GRF"/>
+                            <constraint firstItem="h89-Pu-RdM" firstAttribute="top" secondItem="ulY-9n-GdG" secondAttribute="top" constant="20" id="trS-vU-4uF"/>
+                            <constraint firstItem="QWJ-7W-4lQ" firstAttribute="bottom" secondItem="ulY-9n-GdG" secondAttribute="bottom" id="w1A-6b-CYv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ulY-9n-GdG"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="QWJ-7W-4lQ" id="Gna-sK-ODM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEq-3t-n4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2786" y="27"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="rideau1" width="500" height="750"/>
+    </resources>
     <color key="tintColor" red="0.052954445422535211" green="0.052954445422535211" blue="0.052954445422535211" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

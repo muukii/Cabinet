@@ -33,6 +33,8 @@
 		4BF3BB7421702D4300801DAA /* InternalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB8E332158D602008DDA56 /* InternalUtils.swift */; };
 		4BF3BB7521702D4800801DAA /* RideauTouchThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB8E352158D6CC008DDA56 /* RideauTouchThroughView.swift */; };
 		4BF3BB7621702D4A00801DAA /* RideauView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B899121567B7A007F7B2B /* RideauView.swift */; };
+		A5CB90542224C65B009C8516 /* RideauCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90532224C65B009C8516 /* RideauCell.swift */; };
+		A5CB90562224D89D009C8516 /* SelectRideauViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CB90552224D89D009C8516 /* SelectRideauViewController.swift */; };
 		C596E0609C2D6FD0CEE6C40C /* Pods_RideauDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB2C93114801EF6FAF22FBBD /* Pods_RideauDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,12 +91,14 @@
 		4BEB8E332158D602008DDA56 /* InternalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalUtils.swift; sourceTree = "<group>"; };
 		4BEB8E352158D6CC008DDA56 /* RideauTouchThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideauTouchThroughView.swift; sourceTree = "<group>"; };
 		4BF0A4122222738D00CB1CE4 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		7498A2CACD3708F441715BD5 /* Pods-RideauDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideauDemo.release.xcconfig"; path = "Target Support Files/Pods-RideauDemo/Pods-RideauDemo.release.xcconfig"; sourceTree = "<group>"; };
+		A5CB90532224C65B009C8516 /* RideauCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideauCell.swift; sourceTree = "<group>"; };
+		A5CB90552224D89D009C8516 /* SelectRideauViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRideauViewController.swift; sourceTree = "<group>"; };
 		AB2C93114801EF6FAF22FBBD /* Pods_RideauDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideauDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5474D0D221FF07300B21FEC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B5474D0E221FF07300B21FEC /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		B5474D0F221FF07300B21FEC /* Rideau.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rideau.podspec; sourceTree = SOURCE_ROOT; };
-		B7755B15B3705043A3ABDF19 /* Pods-RideauDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideauDemo.release.xcconfig"; path = "Target Support Files/Pods-RideauDemo/Pods-RideauDemo.release.xcconfig"; sourceTree = "<group>"; };
-		FF05FB4ACDA82FD29F14B9C2 /* Pods-RideauDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideauDemo.debug.xcconfig"; path = "Target Support Files/Pods-RideauDemo/Pods-RideauDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E5AD9B041A4A35DDE9884DB5 /* Pods-RideauDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideauDemo.debug.xcconfig"; path = "Target Support Files/Pods-RideauDemo/Pods-RideauDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 				4B4EF5352221D6BD00BBA7A6 /* MainMenuViewController.swift */,
 				4BD70867220A946D0092A514 /* TargetViewController.swift */,
 				4B5930E5220F407000EDACBF /* HasScrollableContentViewController.swift */,
+				A5CB90552224D89D009C8516 /* SelectRideauViewController.swift */,
+				A5CB90532224C65B009C8516 /* RideauCell.swift */,
 				4BF0A4122222738D00CB1CE4 /* MenuItemCell.swift */,
 				4B1B898321567B6B007F7B2B /* Main.storyboard */,
 				4B1B898621567B6C007F7B2B /* Assets.xcassets */,
@@ -181,8 +187,8 @@
 		A46B42DA31F236780C34F28A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FF05FB4ACDA82FD29F14B9C2 /* Pods-RideauDemo.debug.xcconfig */,
-				B7755B15B3705043A3ABDF19 /* Pods-RideauDemo.release.xcconfig */,
+				E5AD9B041A4A35DDE9884DB5 /* Pods-RideauDemo.debug.xcconfig */,
+				7498A2CACD3708F441715BD5 /* Pods-RideauDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -326,7 +332,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RideauDemo/Pods-RideauDemo-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RideauDemo/Pods-RideauDemo-frameworks.sh",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer-20/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -337,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RideauDemo/Pods-RideauDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideauDemo/Pods-RideauDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		24E99E005F020AED5C000422 /* [CP] Check Pods Manifest.lock */ = {
@@ -370,9 +376,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B5930E6220F407000EDACBF /* HasScrollableContentViewController.swift in Sources */,
+				A5CB90562224D89D009C8516 /* SelectRideauViewController.swift in Sources */,
 				4B4EF5362221D6BD00BBA7A6 /* MainMenuViewController.swift in Sources */,
 				4B1B898221567B6B007F7B2B /* ViewController.swift in Sources */,
 				4BF0A4132222738D00CB1CE4 /* MenuItemCell.swift in Sources */,
+				A5CB90542224C65B009C8516 /* RideauCell.swift in Sources */,
 				4BD70868220A946D0092A514 /* TargetViewController.swift in Sources */,
 				4B1B898021567B6B007F7B2B /* AppDelegate.swift in Sources */,
 			);
@@ -547,13 +555,13 @@
 		};
 		4B1B898F21567B6C007F7B2B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF05FB4ACDA82FD29F14B9C2 /* Pods-RideauDemo.debug.xcconfig */;
+			baseConfigurationReference = E5AD9B041A4A35DDE9884DB5 /* Pods-RideauDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KU2QEJ9K3Z;
+				DEVELOPMENT_TEAM = D7C48J3S5N;
 				INFOPLIST_FILE = "$(SRCROOT)/RideauDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -569,13 +577,13 @@
 		};
 		4B1B899021567B6C007F7B2B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7755B15B3705043A3ABDF19 /* Pods-RideauDemo.release.xcconfig */;
+			baseConfigurationReference = 7498A2CACD3708F441715BD5 /* Pods-RideauDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KU2QEJ9K3Z;
+				DEVELOPMENT_TEAM = D7C48J3S5N;
 				INFOPLIST_FILE = "$(SRCROOT)/RideauDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
