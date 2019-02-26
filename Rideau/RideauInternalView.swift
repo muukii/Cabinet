@@ -322,6 +322,11 @@ final class RideauInternalView : RideauTouchThroughView {
   
   @objc private func handlePan(gesture: RideauViewDragGestureRecognizer) {
     
+    // If we are scrolling horizontally, we skip the rideau pan gesture
+    if gesture.trackingScrollView?.bounds.height ==  gesture.trackingScrollView?.contentSize.height && (gesture.trackingScrollView?.isDragging == true || gesture.trackingScrollView?.isDecelerating == true) {
+      return
+    }
+    
     let translation = gesture.translation(in: gesture.view!)
     
     defer {
