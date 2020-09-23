@@ -103,7 +103,7 @@ final class RideauInternalView : RideauTouchThroughView {
   private let scrollController: ScrollController = .init()
   
   // To tracking pan gesture
-  private var lastOffset: CGPoint!
+private var lastOffset: CGPoint = .zero
   private var shouldKillDecelerate: Bool = false
   private var initialLocation: ResolvedConfiguration.Location?
   private var hasReachedMostTop: Bool = false
@@ -451,7 +451,7 @@ final class RideauInternalView : RideauTouchThroughView {
           case (false, false, false, false):
             scrollController.resume()
             shouldKillDecelerate = true
-            scrollView.contentOffset = lastOffset!
+            scrollView.contentOffset = lastOffset
             skipsDragging = false
           case (true, true, false, _):
             shouldKillDecelerate = true
@@ -491,7 +491,7 @@ final class RideauInternalView : RideauTouchThroughView {
             scrollController.resume()
           } else {
             skipsDragging = false
-            scrollView.contentOffset = lastOffset!
+            scrollView.contentOffset = lastOffset
             scrollController.suspend()
             shouldKillDecelerate = true
           }
@@ -565,10 +565,12 @@ final class RideauInternalView : RideauTouchThroughView {
           heightConstraint.constant -= offset
         }
       }
-      
-      lastOffset = targetScrollView?.contentOffset
-      
-    case .ended, .cancelled, .failed:
+
+      if let lastOffset = targetScrollView?.contentOffset {
+        self.lastOffset = lastOffset
+        }
+    case .ended
+    , .cancelled, .failed:
       
       scrollController.endTracking()
       
@@ -576,7 +578,7 @@ final class RideauInternalView : RideauTouchThroughView {
         // To perform task next event loop.
         DispatchQueue.main.async {
           
-          var targetOffset = self.lastOffset!
+          var targetOffset = self.lastOffset
           let insetTop = _getActualContentInset(from: scrollView).top
           if targetOffset.y < -insetTop {
             // Workaround: sometimes, scrolling-lock may be failed. ContentOffset has a little bit negative offset.
