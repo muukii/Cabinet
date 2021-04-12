@@ -89,4 +89,13 @@ public struct ResolvedSnapPointRange : Hashable {
   }
   
 }
+
+extension RideauSnapPoint: ExpressibleByFloatLiteral {
+  
+  public init(floatLiteral value: Double) {
+    self = .fraction(CGFloat(value))
+  }
+  
+}
+
 #endif
